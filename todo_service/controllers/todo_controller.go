@@ -11,7 +11,7 @@ import (
 func GetTodos(c *gin.Context) {
 	var todos []models.Todo
 	database.DB.Find(&todos)
-	c.JSON(http.StatusOK, todos)
+	c.JSON(http.StatusOK, gin.H{"todos": todos})
 }
 
 func GetTodo(c *gin.Context) {

@@ -13,7 +13,7 @@ func AuthMiddleware() gin.HandlerFunc {
 			c.AbortWithStatusJSON(http.StatusUnauthorized, gin.H{"error": "Kein Token vorhanden"})
 			return
 		}
-		c.Set("user_id", 1) // Vereinfachung: Im echten Projekt Token parsen oder beim User-Service validieren
+		c.Set("user_id", 1)
 		c.Next()
 	}
 }

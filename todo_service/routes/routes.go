@@ -7,18 +7,20 @@ import (
 )
 
 func SetupRoutes(r *gin.Engine) {
-	// Todo
+
 	r.GET("/todos", controllers.GetTodos)
 	r.GET("/todos/:id", controllers.GetTodo)
 	r.POST("/todos", controllers.CreateTodo)
 	r.PUT("/todos/:id", controllers.UpdateTodo)
 	r.DELETE("/todos/:id", controllers.DeleteTodo)
 
-	// Projects
 	r.GET("/projects", controllers.GetProjects)
 	r.POST("/projects", controllers.CreateProject)
+	r.PUT("/projects/:id", controllers.UpdateProject)
+	r.DELETE("/projects/:id", controllers.DeleteProject)
 
-	// Categories
 	r.GET("/categories", controllers.GetCategories)
 	r.POST("/categories", controllers.CreateCategory)
+	r.PUT("/categories/:id", controllers.UpdateCategory)
+	r.DELETE("/categories/:id", controllers.DeleteCategory)
 }
